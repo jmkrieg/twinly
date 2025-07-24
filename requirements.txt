@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+pytest
+httpx
+openai
+anthropic
+python-dotenv
+langfuse
+qdrant-client[fastembed]
+jinja2
+python-frontmatter
+pydantic
+ruff
+black
+mypy

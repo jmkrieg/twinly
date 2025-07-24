@@ -1,0 +1,21 @@
+---
+description: "Greeting template for user interactions"
+author: "Marinho Krieg"
+version: "1.0"
+variables: ["user_name", "time_of_day", "task_type", "previous_conversation", "previous_topic"]
+---
+Hello {{ user_name }}!
+
+{% if time_of_day is defined %}
+Good {{ time_of_day }}!
+{% endif %}
+
+{% if task_type is defined %}
+I'm here to help you with {{ task_type }}.
+{% endif %}
+
+{% if previous_conversation is defined and previous_conversation and previous_topic is defined %}
+I remember we were discussing {{ previous_topic }} earlier.
+{% endif %}
+
+How can I assist you today?
