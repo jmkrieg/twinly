@@ -5,10 +5,15 @@ from pydantic import BaseModel
 from typing import List, Literal, Optional, Dict, Any
 
 
+class ChatMessageContent(BaseModel):
+    """Content of a chat message, can be text or other types."""
+    type: Literal["text"]
+    text: str
+
 class Message(BaseModel):
     """Represents a chat message with role and content."""
     role: Literal["system", "user", "assistant"]
-    content: str
+    content: List[ChatMessageContent]
 
 
 class ChatCompletionRequest(BaseModel):
