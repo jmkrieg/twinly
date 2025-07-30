@@ -154,6 +154,20 @@ app.include_router(chat_router)
 logger.info("Twinly API initialized successfully")
 
 
+from fastapi import FastAPI, Request
+import logging
+
+logger = logging.getLogger("uvicorn.error")
+
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    body = await request.body()
+    logger.debug(f"Request URL: {request.url}")
+    logger.debug(f"Request Headers: {request.headers}")
+    logger.debug(f"Request Body: {body.decode('utf-8')}")
+    
+    response = await call_next(request)
+    return response
 
 
 """

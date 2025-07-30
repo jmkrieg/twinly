@@ -48,7 +48,12 @@ Der **agent-mode** implementiert ein fortgeschrittenes "plan – reason – resp
 
 ## 🔧 Installation und Setup
 
-### 1. Environment aktivieren
+### 1. Environment erstellen und aktivieren
+
+```bash
+conda create -n twinly python=3.13
+```
+
 ```bash
 conda activate twinly
 ```
